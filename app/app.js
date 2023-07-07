@@ -3,15 +3,15 @@ const app = express();
 
 const MongoClient = require("mongodb").MongoClient;
 
-const PORT = process.env.PORT || 8000;
-const CONNECTION_URI = "mongodb://mongo:27017/";
+const PORT = 8000;
+const CONNECTION_URI = "mongodb://mongodb:27017/";
 // const DATABASE = "weblog";
 const OPTIONS = {
   family: 4,
   useUnifiedTopology: true,
 };
 
-MongoClient.connect(CONNECTION_URI, [OPTIONS], (err, client) => {
+MongoClient.connect(CONNECTION_URI, OPTIONS, (err, client) => {
   // var db = client.db(DATABASE);
   if (err) throw err;
   console.log("mongodb connected");
@@ -23,6 +23,7 @@ app.get("/", (req, res) => {
   res.send("hello express");
 });
 
+console.log("hello world2");
 // // run server
 app.listen(PORT, () => {
   console.log(`server running at port ${PORT}`);
