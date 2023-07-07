@@ -8,6 +8,7 @@ const CONNECTION_URI = "mongodb://mongo:27017/";
 // const DATABASE = "weblog";
 const OPTIONS = {
   family: 4,
+  useUnifiedTopology: true,
 };
 
 MongoClient.connect(CONNECTION_URI, [OPTIONS], (err, client) => {
