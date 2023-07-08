@@ -1,2 +1,5 @@
 /app/node_modules
+/app/public/development
+/app/public/production
+/app/log
 /data
