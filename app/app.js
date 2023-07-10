@@ -7,8 +7,6 @@ const {
   OPTIONS,
 } = require("./config/mongodb.config");
 
-var bodyParser = require("body-parser");
-
 // mongodb connection check function
 const mongodbConnectionCheck = () => {
   MongoClient.connect(CONNECTION_URI, OPTIONS, (err, client) => {
@@ -32,9 +30,6 @@ const mongodbConnectionCheck = () => {
 };
 mongodbConnectionCheck();
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-console.log("Hello World edited!");
+console.log("Hello node!");
 
 app.listen(8000);
