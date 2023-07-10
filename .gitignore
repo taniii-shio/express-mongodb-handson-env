@@ -2,4 +2,4 @@
 /app/public/development
 /app/public/production
 /app/log
-# /data/db
+/data/db
