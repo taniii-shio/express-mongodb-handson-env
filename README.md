@@ -18,13 +18,15 @@
 
 ## 手順
 
-1. 任意のディレクトリに移動し、当テンプレートをクローン
+1. コマンドプロンプトを立ち上げ、Windows PowerShellを起動
+
+2. 任意のディレクトリに移動し、当テンプレートをクローン
 
 ```
 git clone https://github.com/taniii-shio/express-mongodb-handson-env.git
 ```
 
-2. クローンしたプロジェクトに移動し、コンテナを起動
+3. クローンしたプロジェクトに移動し、コンテナを起動
 
 ```
 cd express-mongodb-handson-env
@@ -33,13 +35,13 @@ cd express-mongodb-handson-env
 docker-compose up -d
 ```
 
-3. `node-app`コンテナと`mongodb`コンテナが起動していることを確認
+4. `node-app`コンテナと`mongodb`コンテナが起動していることを確認
 
 ```
 docker ps
 ```
 
-4. app ディレクトリ配下で実装を進める
+5. app ディレクトリ配下で実装を進める
 
 ```
 cd app
