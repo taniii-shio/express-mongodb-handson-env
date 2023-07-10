@@ -12,4 +12,4 @@ RUN chmod 777 ./initialize-node.sh
 
 EXPOSE 3000
 
-CMD ["./initialize-node.sh"]
+CMD ["sh", "./initialize-node.sh"]
