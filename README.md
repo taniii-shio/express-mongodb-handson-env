@@ -1,6 +1,6 @@
 # express-mongodb-handson-env
 
-## 環境概要
+## 環境
 
 - Node 10.24.1
 - npm 6.14.12
@@ -38,6 +38,11 @@
 
 - npm パッケージのうち、`express`と`mongodb`はインストール済み
 - mongodb に格納する初期データはインサート済み（./app/initialize-node.sh）
+- node-app コンテナはローカルホストの 8000 番ポートでリッスンしています
+  - そのため、app.js を実行せずともサーバーが起動している状態が作れています（動画内で登場する app.js の実行は無視してください）
+  - また、`nodemon`というライブラリを使用しているため、ファイルの保存で変更がコンテナに反映されます
 - npm コマンドを実行する際は、`docker exec`コマンドを使用し、コンテナ内で実行してください
-- package.json を編集した場合は、コンテナを再起動してください
-  - `docker restart node-app`
+  - 例 1、`eslint`をインストールする場合
+    - `docker exec node-app npm install eslint@^4.19 --save-dev`
+  - 例 2、npm scripts を実行する場合
+    - `docker exec node-app npm run build-dev`
