@@ -33,15 +33,20 @@
   - `node-app`と`mongodb`コンテナが起動していることを確認
 - `cd app`
   - app ディレクトリ配下で実装を進める（骨格は作成済み）
+- \*\*※npm コマンドを実行する際は、`docker exec`コマンドを使用し、コンテナ内で実行してください\*\*
+  - 例 1、`eslint`をインストールする場合
+    - `docker exec node-app npm install eslint@^4.19 --save-dev`
+  - 例 2、npm scripts を実行する場合
+    - `docker exec node-app npm run build-dev`
 
-## 注意事項
+## 特記事項
 
 - npm パッケージのうち、`express`と`mongodb`はインストール済み
 - mongodb に格納する初期データはインサート済み（./app/initialize-node.sh）
 - node-app コンテナはローカルホストの 8000 番ポートでリッスンしています
   - そのため、app.js を実行せずともサーバーが起動している状態が作れています（動画内で登場する app.js の実行は無視してください）
   - また、`nodemon`というライブラリを使用しているため、ファイルの保存で変更がコンテナに反映されます
-- npm コマンドを実行する際は、`docker exec`コマンドを使用し、コンテナ内で実行してください
+- npm コマンドを実行する際は、`docker exec`コマンドを使用し、コンテナ内で実行してください（再掲載）
   - 例 1、`eslint`をインストールする場合
     - `docker exec node-app npm install eslint@^4.19 --save-dev`
   - 例 2、npm scripts を実行する場合
